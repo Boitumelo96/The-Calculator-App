@@ -18,19 +18,19 @@
                 <td onclick="digitBtnPressed(7)">7</td>
                 <td onclick="digitBtnPressed(8)">8</td>
                 <td onclick="digitBtnPressed(9)">9</td>
-                <td onclick="digitBtnPressed(x)">x</td>
+                <td onclick="operatorBtnPressed('*')">x</td>
             </tr>
             <tr>
                 <td onclick="digitBtnPressed(4)">4</td>
                 <td onclick="digitBtnPressed(5)">5</td>
                 <td onclick="digitBtnPressed(6)">6</td>
-                <td onclick="digitBtnPressed(-)">-</td>
+                <td onclick="operatorBtnPressed('-')">-</td>
             </tr>
             <tr>
                 <td onclick="digitBtnPressed(1)">1</td>
                 <td onclick="digitBtnPressed(2)">2</td>
                 <td onclick="digitBtnPressed(3)">3</td>
-                <td>+</td>
+                <td onclick="operatorBtnPressed('+')">+</td>
             </tr>
             <tr>
                 <td colspan="2">0</td>
@@ -47,6 +47,9 @@
         <script>
             // Initialize a flag to track if a new line is being started
             var newLine = true;
+
+            var value1;
+            var currentOperator;
             // Function to handle digit button presses
             function digitBtnPressed(button){
                 if (newLine) {
@@ -63,7 +66,13 @@
                 document.getElementById("inputBox").value = 0;
                 newLine = true;
             }
-            // Function to handle the equals button press
+            // Function to handle the operators button press
+            function operatorBtnPressed(operator){
+                currentOperator = operator;
+                value1 = parseInt(document.getElementById("inputBox").value);
+                newLine = true;
+                
+            }
         </script> 
     </body>
 </html>
