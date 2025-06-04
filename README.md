@@ -1,7 +1,6 @@
 # The-Calculator-App
 Responive calculator app
 
-# Create a README.md file with the content provided
 
 readme_content = """\
 # 🧮 Simple Web-Based Calculator
